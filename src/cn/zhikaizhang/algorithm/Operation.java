@@ -7,12 +7,12 @@ import java.math.RoundingMode;
 
 
 /**
- * 运算
+ * Λειτουργίες
  */
 public class Operation {
 
     /**
-     * 加
+     * Πρόσθεση
      */
     public static double add(double n1, double n2){
 
@@ -24,7 +24,7 @@ public class Operation {
     }
 
     /**
-     * 减
+     * Λιγότερο
      */
     public static double substract(double n1, double n2){
 
@@ -35,9 +35,7 @@ public class Operation {
         }
     }
 
-    /**
-     * 乘
-     */
+
     public static double multiply(double n1, double n2){
 
         if(Double.isInfinite(n1 * n2) || Double.isNaN(n1 * n2)){
@@ -48,7 +46,7 @@ public class Operation {
     }
 
     /**
-     * 除
+     * Εκτός από
      */
     public static double divide(double n1, double n2){
 
@@ -68,7 +66,7 @@ public class Operation {
     }
 
     /**
-     * 正
+     * Θετικό
      */
     public static double positive(double n1){
 
@@ -76,7 +74,7 @@ public class Operation {
     }
 
     /**
-     * 负
+     * Αρνητικό
      */
     public static double negative(double n1){
 
@@ -84,7 +82,7 @@ public class Operation {
     }
 
     /**
-     * 乘方
+     * Πολλαπλασιασμός του τετραγώνου
      */
     public static double power(double n1, double n2){
 
@@ -96,7 +94,7 @@ public class Operation {
     }
 
     /**
-     * 阶乘
+     * παραγοντικό
      */
     public static double factorial(double n1){
 

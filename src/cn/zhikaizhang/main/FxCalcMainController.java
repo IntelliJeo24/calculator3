@@ -236,7 +236,7 @@ public class FxCalcMainController {
                 LABEL5.setText("");
             }catch(ExpressionIllegalException e){
                 System.out.println("expression illegal");
-                // DO NOTHING
+
             }
         }
 
@@ -295,7 +295,8 @@ public class FxCalcMainController {
 
 
     /**
-     * 当LABEL5为空时输入必须有前置操作数的运算符时，将前置操作数设为ans
+     * Όταν το LABEL5 είναι κενό, εισαγάγετε τον τελεστή που πρέπει να έχει προηγούμενο τελεστή,
+     * θέστε τον προηγούμενο τελεστή σε ans
      */
     private void pressOperator(){
 

@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.paint.*?>
 <?import javafx.geometry.*?>
-<?import javafx.scene.shape.*?>
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="512.0" prefWidth="390.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cn.zhikaizhang.main.FxCalcMainController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="512.0" prefWidth="390.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cn.zhikaizhang.main.FxCalcMainController">
     <children>
         <Button fx:id="BUTTON7" layoutX="119.0" layoutY="230.0" mnemonicParsing="false" onAction="#BUTTON7_ONCLICK" prefHeight="48.0" prefWidth="48.0" styleClass="number" text="7">
         </Button>
@@ -32,7 +26,7 @@
         </Button>
         <Button fx:id="BUTTON3" layoutX="223.0" layoutY="334.0" mnemonicParsing="false" onAction="#BUTTON3_ONCLICK" prefHeight="48.0" prefWidth="48.0" styleClass="number" text="3">
         </Button>
-        <Button fx:id="BUTTON0" layoutX="119.0" layoutY="386.0" mnemonicParsing="false" onAction="#BUTTON0_ONCLICK" prefHeight="48.0" prefWidth="48.0" styleClass="number" text="0">
+        <Button fx:id="BUTTON0" layoutX="171.0" layoutY="386.0" mnemonicParsing="false" onAction="#BUTTON0_ONCLICK" prefHeight="48.0" prefWidth="48.0" styleClass="number" text="0">
         </Button>
         <Button fx:id="BUTTON_LEFT_PAREN" layoutX="275.0" layoutY="194.0" mnemonicParsing="false" onAction="#BUTTON_LEFT_PAREN_ONCLICK" prefHeight="32.0" prefWidth="48.0" styleClass="number" text="(">
         </Button>
@@ -50,7 +44,7 @@
         </Button>
         <Button fx:id="BUTTON_BACK" layoutX="327.0" layoutY="386.0" mnemonicParsing="false" onAction="#BUTTON_BACK_ONCLICK" prefHeight="48.0" prefWidth="48.0" styleClass="operator" text="←">
         </Button>
-        <Button fx:id="BUTTON_POINT" layoutX="171.0" layoutY="386.0" mnemonicParsing="false" onAction="#BUTTON_POINT_ONCLICK" prefHeight="48.0" prefWidth="48.0" styleClass="operator" text=".">
+        <Button fx:id="BUTTON_POINT" layoutX="223.0" layoutY="386.0" mnemonicParsing="false" onAction="#BUTTON_POINT_ONCLICK" prefHeight="48.0" prefWidth="48.0" styleClass="operator" text=".">
         </Button>
         <Button fx:id="BUTTON_RIGHT_PAREN" layoutX="327.0" layoutY="194.0" mnemonicParsing="false" onAction="#BUTTON_RIGHT_PAREN_ONCLICK" prefHeight="32.0" prefWidth="48.0" styleClass="operator" text=")">
         </Button>
@@ -58,7 +52,7 @@
       <Button fx:id="BUTTON_NEGATIVE" layoutX="327.0" layoutY="230.0" mnemonicParsing="false" onAction="#BUTTON_NEGATIVE_ONCLICK" prefHeight="48.0" prefWidth="48.0" styleClass="operator" text="(-)" />
       <Button fx:id="BUTTON_FACTORIAL" layoutX="67.0" layoutY="282.0" mnemonicParsing="false" onAction="#BUTTON_FACTORIAL_ONCLICK" prefHeight="48.0" prefWidth="48.0" styleClass="operator" text="!" />
       <Button fx:id="BUTTON_POWER" layoutX="15.0" layoutY="282.0" mnemonicParsing="false" onAction="#BUTTON_POWER_ONCLICK" prefHeight="48.0" prefWidth="48.0" styleClass="operator" text="^" />
-      <Button fx:id="BUTTON_EE" layoutX="223.0" layoutY="386.0" mnemonicParsing="false" onAction="#BUTTON_EE_ONCLICK" prefHeight="48.0" prefWidth="48.0" styleClass="operator" text="EE" />
+      <Button fx:id="BUTTON_EE" layoutX="119.0" layoutY="386.0" mnemonicParsing="false" onAction="#BUTTON_EE_ONCLICK" prefHeight="48.0" prefWidth="48.0" styleClass="operator" text="EE" />
       <Button fx:id="BUTTON_TAN" layoutX="119.0" layoutY="194.0" mnemonicParsing="false" onAction="#BUTTON_TAN_ONCLICK" prefHeight="32.0" prefWidth="48.0" styleClass="number" text="tan" />
       <Button fx:id="BUTTON_COS" layoutX="67.0" layoutY="194.0" mnemonicParsing="false" onAction="#BUTTON_COS_ONCLICK" prefHeight="32.0" prefWidth="48.0" styleClass="number" text="cos" />
       <Button fx:id="BUTTON_SIN" layoutX="15.0" layoutY="194.0" mnemonicParsing="false" onAction="#BUTTON_SIN_ONCLICK" prefHeight="32.0" prefWidth="48.0" styleClass="number" text="sin" />
@@ -66,10 +60,10 @@
       <Button fx:id="BUTTON_LN" layoutX="223.0" layoutY="194.0" mnemonicParsing="false" onAction="#BUTTON_LN_ONCLICK" prefHeight="32.0" prefWidth="48.0" styleClass="number" text="ln" />
       <Button fx:id="BUTTON_PI" layoutX="15.0" layoutY="230.0" mnemonicParsing="false" onAction="#BUTTON_PI_ONCLICK" prefHeight="48.0" prefWidth="48.0" styleClass="number" text="π" />
       <Button fx:id="BUTTON_E" layoutX="67.0" layoutY="230.0" mnemonicParsing="false" onAction="#BUTTON_E_ONCLICK" prefHeight="48.0" prefWidth="48.0" styleClass="number" text="e" />
-      <Button fx:id="BUTTON_EXPONENT" layoutX="15.0" layoutY="386.0" mnemonicParsing="false" onAction="#BUTTON_EXPONENT_ONCLICK" prefHeight="48.0" prefWidth="48.0" styleClass="number" text="指数" />
-      <Button fx:id="BUTTON_RECIPROCAL" layoutX="67.0" layoutY="386.0" mnemonicParsing="false" onAction="#BUTTON_RECIPROCAL_ONCLICK" prefHeight="48.0" prefWidth="48.0" styleClass="number" text="倒数" />
-      <Button fx:id="BUTTON_SQUARE" layoutX="15.0" layoutY="334.0" mnemonicParsing="false" onAction="#BUTTON_SQUARE_ONCLICK" prefHeight="48.0" prefWidth="48.0" styleClass="number" text="平方" />
-      <Button fx:id="BUTTON_SQRT" layoutX="67.0" layoutY="334.0" mnemonicParsing="false" onAction="#BUTTON_SQRT_ONCLICK" prefHeight="48.0" prefWidth="48.0" styleClass="number" text="开方" />
+      <Button fx:id="BUTTON_EXPONENT" layoutX="15.0" layoutY="386.0" mnemonicParsing="false" onAction="#BUTTON_EXPONENT_ONCLICK" prefHeight="48.0" prefWidth="48.0" styleClass="number" text="e^x" />
+      <Button fx:id="BUTTON_RECIPROCAL" layoutX="67.0" layoutY="386.0" mnemonicParsing="false" onAction="#BUTTON_RECIPROCAL_ONCLICK" prefHeight="48.0" prefWidth="48.0" styleClass="number" text="1/x" />
+      <Button fx:id="BUTTON_SQUARE" layoutX="15.0" layoutY="334.0" mnemonicParsing="false" onAction="#BUTTON_SQUARE_ONCLICK" prefHeight="48.0" prefWidth="48.0" styleClass="number" text="x^2" />
+      <Button fx:id="BUTTON_SQRT" layoutX="67.0" layoutY="334.0" mnemonicParsing="false" onAction="#BUTTON_SQRT_ONCLICK" prefHeight="48.0" prefWidth="48.0" styleClass="number" text="sqrt" />
       <Pane fx:id="screenPane" layoutX="15.0" layoutY="27.0" prefHeight="162.0" prefWidth="360.0">
          <children>
               <Label fx:id="LABEL1" layoutX="1.0" layoutY="1.0" onMouseClicked="#LABEL1_ONCLICK" prefHeight="32.0" prefWidth="358.0" textAlignment="RIGHT">
@@ -102,6 +96,6 @@
       </Pane>
       <Button fx:id="iconify" alignment="CENTER" graphicTextGap="0.0" layoutX="345.0" layoutY="10.0" maxHeight="20.0" maxWidth="20.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="12.0" prefWidth="12.0" />
       <Button fx:id="close" alignment="CENTER" graphicTextGap="0.0" layoutX="363.0" layoutY="10.0" maxHeight="20.0" maxWidth="20.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="12.0" prefWidth="12.0" />
-      <Text layoutX="17.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="fx-Calc" />
+      <Text layoutX="17.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Methodologia Calculator" textAlignment="CENTER" />
     </children>
 </Pane>

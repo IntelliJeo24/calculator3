@@ -1,8 +1,9 @@
 package cn.zhikaizhang.algorithm;
 
 /**
- * 运算单元（操作数或广义的运算符）
- * 将可运算的运算符、左右括号、起止符并称为广义运算符
+ * Λειτουργικές μονάδες (τελεστές ή τελεστές με την ευρεία έννοια)
+ * Οι τελεστές, οι αριστερές και οι δεξιές αγκύλες,
+ * καθώς και η έναρξη και η παύση αναφέρονται μαζί ως γενικευμένοι τελεστές
  */
 public class Unit {
 
@@ -15,7 +16,7 @@ public class Unit {
     private double val;
 
     /**
-     *  操作数
+     *  Αριθμός εργασιών
      */
     public Unit(double val) {
         this.type = Type.OPERAND;
@@ -23,7 +24,7 @@ public class Unit {
     }
 
     /**
-     *  广义运算符
+     *  Γενικευμένοι τελεστές
      */
     public Unit(Type type) {
 
@@ -72,7 +73,7 @@ public class Unit {
     }
 
     /**
-     * 运算单元进行运算
+     * αριθμητικές μονάδες που εκτελούν πράξεις
      */
     public Unit operate(Unit ...operands) throws ExpressionIllegalException{
 
@@ -118,28 +119,28 @@ public class Unit {
 
 
     /**
-     * 一元运算符
+     * Μοναδιαίοι τελεστές
      */
     public boolean isUnary(){
         return type == Type.POSITIVE || type == Type.NEGATIVE || type == Type.FACTORIAL || type == Type.SIN || type == Type.COS || type == Type.TAN || type == Type.LN || type == Type.LOG || type == Type.SQRT;
     }
 
     /**
-     * 二元运算符
+     * Δυαδικοί τελεστές
      */
     public boolean isBinary(){
         return type == Type.ADD || type == Type.SUBSTRACT || type == Type.MULTIPLY || type == Type.DIVIDE  || type == Type.EE || type == Type.POWER;
     }
 
     /**
-     * 可运算的运算符
+     * Λειτουργικοί χειριστές
      */
     public boolean isNormalOperator(){
         return isUnary() || isBinary();
     }
 
     /**
-     * 广义运算符
+     * Γενικευμένοι τελεστές
      */
     public boolean isOperator(){
         return type != Type.OPERAND;

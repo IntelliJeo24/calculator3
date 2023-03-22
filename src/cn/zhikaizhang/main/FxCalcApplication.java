@@ -27,7 +27,7 @@ public class FxCalcApplication extends Application {
 
     private double xOffset;
     private double yOffset;
-
+// **Main
     @Override
     public void start(Stage stage) throws Exception{
 
@@ -37,16 +37,16 @@ public class FxCalcApplication extends Application {
         FxCalcLookAndFeel.attach(scene);
         stage.setScene(scene);
         setFxCalcInteractionListeners(stage);
-        stage.setTitle("计算器");
+        stage.setTitle("Calculator");
         stage.initStyle(StageStyle.TRANSPARENT);
-        stage.getIcons().add(new Image(FxCalcApplication.class.getResourceAsStream("/images/logo.png")));
+        stage.getIcons().add(new Image(FxCalcApplication.class.getResourceAsStream("/images/logo.png")));   // ορισμός logo
         stage.setResizable(false);
         stage.show();
 
 
     }
 
-
+// ρύθμιση κουμπιών
 
     public void setFxCalcInteractionListeners(final Stage stage){
 
@@ -74,6 +74,8 @@ public class FxCalcApplication extends Application {
             }
         });
 
+// Exit - Ελαχιστοποίηση Action
+
         Button iconify = (Button)root.lookup("#iconify");
         iconify.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -92,9 +94,8 @@ public class FxCalcApplication extends Application {
 
     }
 
-    /**
-     *  滚动计算器历史记录
-     */
+    // Scroll History
+
     private void scrollFxCalcHistory(int scroll){
         if(FxCalcMainController.position + scroll < 0){
             return;
@@ -106,6 +107,8 @@ public class FxCalcApplication extends Application {
             setHistoryLabelText(labels[2], labels[3], FxCalcMainController.position + 1);
         }
     }
+
+    // ιστορικό
 
     private void setHistoryLabelText(Label l1, Label l2, int index){
         Map<String, String> map = FxCalcMainController.history.get(index);

@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 表达式分析器
+ * Expression analyzer
  */
 public class ExpressionParser {
 
 
     /**
-     * 分析表达式，转化为广义运算符和操作数的数组
+     * Ανάλυση εκφράσεων σε πίνακες γενικευμένων τελεστών
      */
     public static List<Unit> parse(String expression) throws ExpressionIllegalException {
 
@@ -18,22 +18,24 @@ public class ExpressionParser {
 
         List<Unit> units = new ArrayList<Unit>();
         /**
-         * 若一个Unit是乘号或除号或左括号或井号或^或E，flag置为true，否则置为false
-         * 若一个Unit是+，且flag为true，说明该+号表示正号
-         * 若一个Unit是-，且flag为true，说明该-号表示负号
+         * Εάν μια μονάδα είναι σύμβολο πολλαπλασιασμού ή διαίρεσης ή αριστερή παρένθεση ή σύμβολο πηγής
+         * ή ^ ή E, η σημαία τίθεται σε true, διαφορετικά τίθεται σε false.
+         * Εάν μια μονάδα είναι + και η ένδειξη είναι αληθής, το σύμβολο + σημαίνει θετικό πρόσημο.
+         * Αν μια μονάδα είναι - και η σημαία είναι αληθής, το σύμβολο - σημαίνει αρνητικό σύμβολο.
          */
         boolean flag = true;
 
         for(int i = 0; i < s.length(); i++){
 
             char c = s.charAt(i);
-            if(c == '∞' || c == 'N' || c == 'p' ||c == 'e' || c >= '0' && c <= '9'){   //操作数
+            if(c == '∞' || c == 'N' || c == 'p' ||c == 'e' || c >= '0' && c <= '9'){   //Αριθμός εργασιών
                 flag = false;
-                if(s.charAt(i) == '∞'){   //操作数，∞无穷,用于处理上次运算结果为无穷然后继续运算的情形
+                if(s.charAt(i) == '∞'){   //Operand, ∞ infinity, για την περίπτωση όπου το αποτέλεσμα της τελευταίας πράξης είναι άπειρο
+                    // και η πράξη συνεχίζεται
 
                     units.add(new Unit(Double.POSITIVE_INFINITY));
                 }
-                else if(s.charAt(i) == 'N'){   //操作数，NaN，表示未定义的运算结果，如0/0
+                else if(s.charAt(i) == 'N'){   //Ο τελεστής, NaN, υποδηλώνει ένα απροσδιόριστο αποτέλεσμα μιας πράξης, π.χ. 0/0
 
                     if(extract(i, 3, s).equals("NaN")){
                         units.add(new Unit(Double.NaN));
@@ -56,11 +58,11 @@ public class ExpressionParser {
 
                     units.add(new Unit(Math.E));
                 }
-                else if(s.charAt(i) >= '0' && s.charAt(i) <= '9'){   //操作数
+                else if(s.charAt(i) >= '0' && s.charAt(i) <= '9'){   //Αριθμός εργασιών
 
                     double val = s.charAt(i) - '0';
-                    boolean hasPoint = false;   //是否出现小数点
-                    double level = 0.1;        //小数部分的单位
+                    boolean hasPoint = false;   //Εάν εμφανίζεται δεκαδικό σημείο
+                    double level = 0.1;        //Μονάδες του κλασματικού μέρους
                     int k;
                     for(k = i+1; k < s.length(); k++){
                         if(s.charAt(k) >= '0' && s.charAt(k) <= '9'){
@@ -82,13 +84,14 @@ public class ExpressionParser {
                     i = k-1;
                     units.add(new Unit(val));
 
-                    //数字与pi、e、函数直接相连,补上乘号
+                    //Οι αριθμοί συνδέονται άμεσα με το π, το e και τη συνάρτηση,
+                    // συμπληρωμένοι με το πρόσημο του πολλαπλασιασμού.
                     if("pesctl".contains(String.valueOf(s.charAt(i+1)))){
                         units.add(new Unit(Unit.Type.MULTIPLY));
                     }
                 }
             }
-            else{      //运算符
+            else{      //Χειριστές
                 if(c == '-' && flag){
                     flag = false;
                     units.add(new Unit(Unit.Type.NEGATIVE));

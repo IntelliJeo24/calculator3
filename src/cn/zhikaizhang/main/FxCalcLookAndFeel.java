@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 控制FxCalc的外观
+ Control the appearance
  */
 public class FxCalcLookAndFeel {
 
@@ -25,20 +25,20 @@ public class FxCalcLookAndFeel {
     public static Map<String, String[]> touchEffect2 = new HashMap<>();
 
     public static Map<String, String> buttonImg = new HashMap<>();
-
+// Ορισμός των χρωμάτων των κουμπιών
     static{
-        touchEffect.put(new String[]{"#BUTTON0", "#BUTTON1", "#BUTTON2", "#BUTTON3", "#BUTTON4", "#BUTTON5", "#BUTTON6", "#BUTTON7", "#BUTTON8", "#BUTTON9"},
-                new String[]{"ffe680", "fff5c6"});  //黄
+        touchEffect.put(new String[]{"#BUTTON_POINT", "#BUTTON_EE", "#BUTTON0", "#BUTTON1", "#BUTTON2", "#BUTTON3", "#BUTTON4", "#BUTTON5", "#BUTTON6", "#BUTTON7", "#BUTTON8", "#BUTTON9"},
+                new String[]{"BFD5C9", "ede6b9"});
         touchEffect.put(new String[]{"#BUTTON_SIN", "#BUTTON_COS", "#BUTTON_TAN", "#BUTTON_POWER", "#BUTTON_FACTORIAL", "#BUTTON_LOG", "#BUTTON_LN", "#BUTTON_PI", "#BUTTON_E", "#BUTTON_SQUARE", "#BUTTON_SQRT", "#BUTTON_EXPONENT", "#BUTTON_RECIPROCAL"},
-                new String[]{"aaccff", "cde2ff"});  //蓝
-        touchEffect.put(new String[]{"#BUTTON_LEFT_PAREN", "#BUTTON_RIGHT_PAREN", "#BUTTON_POINT", "#BUTTON_EE", "#BUTTON_NEGATIVE"}, new String[]{"ffffff", "f6f6f6"});  //白
-        touchEffect.put(new String[]{"#BUTTON_ADD", "#BUTTON_MINUS", "#BUTTON_MULTIPLY", "#BUTTON_DIVIDE"}, new String[]{"b3b3b3", "e0e0e0"});  //灰
-        touchEffect.put(new String[]{"#BUTTON_CLEAR_ALL", "#BUTTON_CLEAR", "#BUTTON_BACK"}, new String[]{"f09797", "e9aeae"});  //红
-        touchEffect.put(new String[]{"#BUTTON_EQUAL"}, new String[]{"c6e9af", "def3d0"});  //绿
-
+                new String[]{"81B9BF", "ede6b9"});
+        touchEffect.put(new String[]{"#BUTTON_LEFT_PAREN", "#BUTTON_RIGHT_PAREN", "#BUTTON_NEGATIVE"}, new String[]{"F8F3E2", "ede6b9"});
+        touchEffect.put(new String[]{"#BUTTON_ADD", "#BUTTON_MINUS", "#BUTTON_MULTIPLY", "#BUTTON_DIVIDE"}, new String[]{"05A3A4", "ede6b9"});
+        touchEffect.put(new String[]{"#BUTTON_CLEAR_ALL", "#BUTTON_CLEAR", "#BUTTON_BACK"}, new String[]{ "B35A20", "ede6b9"});
+        touchEffect.put(new String[]{"#BUTTON_EQUAL"}, new String[]{"E8891D", "ede6b9"});
+// ορισμός κουμπιών ελαχιστοποίησης και close
         touchEffect2.put("#iconify", new String[]{"/images/iconify1.png", "/images/iconify2.png"});
         touchEffect2.put("#close", new String[]{"/images/close1.png", "/images/close2.png"});
-
+// εισαγωγή της ανάλογης εικόνας στο ανάλογο κουμπί
         for(int i = 0; i <= 9; i++){
             buttonImg.put("#BUTTON" + i, "/images/" + i + ".png");
         }
@@ -61,6 +61,7 @@ public class FxCalcLookAndFeel {
             attachImage2Button(button, buttonImg.get(id), id.equals("#BUTTON_EQUAL")?48:27);
         }
     }
+// Hover effect στα κουμπιά
 
     private static void addTouchEffect2Buttons(Scene scene){
 
@@ -105,6 +106,8 @@ public class FxCalcLookAndFeel {
         }
     }
 
+    // hover effect στα labels
+
     private static void addTouchEffect2Labels(Scene scene){
 
         for(int i = 1; i <= 4; i++){
@@ -112,31 +115,31 @@ public class FxCalcLookAndFeel {
             final Rectangle rectangle = (Rectangle)scene.lookup("#rect" + i);
             final Label label = (Label)scene.lookup("#LABEL" + i);
             if(i <= 2){
-                rectangle.setStyle("-fx-fill: #ffffff");
+                rectangle.setStyle("-fx-fill: #ced7d8");
                 label.setOnMouseEntered(new EventHandler<MouseEvent>() {
                     @Override
                     public void handle(MouseEvent event) {
-                        rectangle.setStyle("-fx-fill: #aaccff");
+                        rectangle.setStyle("-fx-fill: #E8891D");
                     }
                 });
                 label.setOnMouseExited(new EventHandler<MouseEvent>() {
                     @Override
                     public void handle(MouseEvent event) {
-                        rectangle.setStyle("-fx-fill: #ffffff");
+                        rectangle.setStyle("-fx-fill: #ced7d8");
                     }
                 });
             }else{
-                rectangle.setStyle("-fx-fill: #f6f6f6");
+                rectangle.setStyle("-fx-fill: #ced7d8");
                 label.setOnMouseEntered(new EventHandler<MouseEvent>() {
                     @Override
                     public void handle(MouseEvent event) {
-                        rectangle.setStyle("-fx-fill: #aaccff");
+                        rectangle.setStyle("-fx-fill: #E8891D");
                     }
                 });
                 label.setOnMouseExited(new EventHandler<MouseEvent>() {
                     @Override
                     public void handle(MouseEvent event) {
-                        rectangle.setStyle("-fx-fill: #f6f6f6");
+                        rectangle.setStyle("-fx-fill: #ced7d8");
                     }
                 });
             }
